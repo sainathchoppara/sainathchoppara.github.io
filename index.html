@@ -6,7 +6,7 @@
 <meta name="description" content="Sainath Choppara is a Financial Risk Manager (FRM) certified Data Engineer with 10+ years of experience in AI/ML, data engineering, credit risk, and ads analytics.">
 <meta name="author" content="Sainath Choppara">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#0071e3">
+<meta name="theme-color" content="#143642">
 <link rel="canonical" href="https://www.sainathchoppara.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sainath Choppara | FRM">
@@ -19,58 +19,366 @@
 <title>Sainath Choppara | FRM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
 <style>
-  /* Reset and basic styling */
+  :root {
+    --bg: #f5f2eb;
+    --paper: #fcfaf6;
+    --ink: #1d2a33;
+    --muted: #5e6971;
+    --accent: #1f7a8c;
+    --accent-dark: #143642;
+    --accent-soft: #d7ecef;
+    --line: #d8d2c8;
+    --card-shadow: 0 20px 50px rgba(20, 54, 66, 0.08);
+    --radius-xl: 28px;
+    --radius-lg: 18px;
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #111; background: #f8f8f8; scroll-behavior: smooth; }
-  a { text-decoration: none; color: inherit; }
-  a:focus-visible { outline: 3px solid #0071e3; outline-offset: 3px; border-radius: 6px; }
+
+  html, body { min-height: 100%; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.65;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 12% 8%, #fff8df 0%, transparent 34%),
+      radial-gradient(circle at 88% 16%, #d8ebf2 0%, transparent 36%),
+      radial-gradient(circle at 50% 90%, #e5efe6 0%, transparent 35%),
+      var(--bg);
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
 
   .skip-link {
     position: absolute;
     left: -9999px;
     top: 0;
-    background: #111;
+    background: var(--accent-dark);
     color: #fff;
     padding: 10px 14px;
     z-index: 2000;
-    border-radius: 0 0 8px 0;
+    border-radius: 0 0 10px 0;
   }
-  .skip-link:focus {
-    left: 0;
+  .skip-link:focus { left: 0; }
+
+  .page {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 22px 52px;
   }
-  
-  /* Navigation */
-  nav { position: sticky; top: 0; background: #fff; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 40px; padding: 20px 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; }
-  nav a { font-weight: 600; color: #111; transition: color 0.3s; }
-  nav a:hover { color: #0071e3; }
 
-  .cta { display: inline-block; padding: 12px 24px; background: #0071e3; color: #fff; border-radius: 8px; font-weight: 600; transition: background 0.3s; }
-  .cta:hover { background: #005bb5; }
+  nav {
+    position: sticky;
+    top: 14px;
+    z-index: 1000;
+    margin: 16px auto 0;
+    backdrop-filter: blur(7px);
+    background: rgba(252, 250, 246, 0.75);
+    border: 1px solid rgba(29, 42, 51, 0.1);
+    border-radius: 999px;
+    box-shadow: 0 12px 30px rgba(29, 42, 51, 0.08);
+  }
 
-  /* Hero Section */
-  .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: linear-gradient(135deg,#ffffff,#e6e6e6); }
-  .hero h1 { font-size: 3rem; margin-bottom: 15px; }
-  .hero p { font-size: 1.2rem; margin-bottom: 20px; color: #555; }
+  .nav-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+  }
 
-  /* Sections */
-  section { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
-  section h2 { font-size: 2rem; margin-bottom: 25px; border-bottom: 2px solid #ddd; padding-bottom: 8px; }
-  ul { padding-left: 22px; }
-  li { margin-bottom: 8px; }
+  .nav-link {
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 0.93rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+  }
 
-  /* Cards for Experience & Education */
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-  .card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
-  .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+  .nav-link:hover {
+    color: var(--accent-dark);
+    background: #edf5f6;
+    transform: translateY(-1px);
+  }
 
-  /* Footer */
-  footer { text-align: center; padding: 30px 20px; color: #777; font-size: 0.9rem; border-top: 1px solid #eee; }
-  .contact-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+  section {
+    margin-top: 34px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    padding: 44px;
+    box-shadow: var(--card-shadow);
+  }
 
-  /* Responsive typography */
-  @media(max-width:768px){ .hero h1{ font-size:2.2rem; } .hero p{ font-size:1rem; } }
+  .hero {
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(140deg, rgba(255, 255, 255, 0.93), rgba(240, 249, 251, 0.88)),
+      var(--paper);
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    right: -90px;
+    top: -100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #89bcc7, #1f7a8c);
+    opacity: 0.22;
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border: 1px solid #b8d8de;
+    border-radius: 999px;
+    background: #edf8fa;
+    color: #0f5b68;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    line-height: 1.16;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4.6vw, 4rem);
+    max-width: 16ch;
+    margin-bottom: 14px;
+    color: var(--accent-dark);
+  }
+
+  .hero-subtitle {
+    color: var(--muted);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 62ch;
+    margin-bottom: 28px;
+  }
+
+  .hero-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .metric {
+    border: 1px solid #c7dee2;
+    background: #f3fafb;
+    padding: 8px 14px;
+    border-radius: 999px;
+    color: #21535d;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, color 0.22s ease;
+  }
+
+  .cta.primary {
+    background: var(--accent-dark);
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(20, 54, 66, 0.25);
+  }
+
+  .cta.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(20, 54, 66, 0.3);
+  }
+
+  .cta.secondary {
+    background: #fff;
+    border: 1px solid #b6c7cd;
+    color: var(--accent-dark);
+  }
+
+  .cta.secondary:hover {
+    background: #eef4f5;
+    transform: translateY(-2px);
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+    margin-bottom: 16px;
+    color: var(--accent-dark);
+  }
+
+  .section-intro {
+    color: var(--muted);
+    max-width: 68ch;
+    margin-bottom: 24px;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .skill-pill {
+    list-style: none;
+    background: #f1f7f8;
+    border: 1px solid #d1e3e7;
+    border-radius: 999px;
+    padding: 9px 14px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #30525c;
+  }
+
+  .timeline {
+    display: grid;
+    gap: 14px;
+  }
+
+  .timeline-item {
+    border: 1px solid #d8d4cc;
+    border-left: 5px solid #8bbcc8;
+    background: #fffdfa;
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
+    transition: transform 0.22s ease, border-left-color 0.22s ease;
+  }
+
+  .timeline-item:hover {
+    transform: translateY(-2px);
+    border-left-color: var(--accent);
+  }
+
+  .role {
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+
+  .edu-card {
+    border: 1px solid #ddd8ce;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    font-weight: 600;
+    color: #33424a;
+  }
+
+  .contact-panel {
+    background: linear-gradient(120deg, #163a45, #1f5866);
+    color: #eaf6f8;
+    border-radius: var(--radius-xl);
+    padding: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+  }
+
+  .contact-panel .section-title {
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .contact-panel p {
+    margin-bottom: 16px;
+    color: #d6ecf0;
+  }
+
+  .contact-panel a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.55);
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contact-actions .cta.secondary {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+  }
+
+  .contact-actions .cta.secondary:hover {
+    background: rgba(255, 255, 255, 0.24);
+  }
+
+  footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #6d757a;
+    font-size: 0.9rem;
+    padding: 12px 0 18px;
+  }
+
+  .reveal {
+    animation: fade-up 0.7s ease both;
+  }
+
+  .delay-1 { animation-delay: 0.08s; }
+  .delay-2 { animation-delay: 0.16s; }
+  .delay-3 { animation-delay: 0.24s; }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 860px) {
+    section { padding: 30px 22px; border-radius: 22px; }
+    nav { top: 10px; }
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 0 14px 38px; }
+    .nav-link { padding: 8px 11px; font-size: 0.86rem; }
+    .hero-metrics { gap: 8px; }
+    .metric { font-size: 0.82rem; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   }
@@ -96,71 +404,102 @@
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="page">
 
 <!-- Navigation -->
 <nav aria-label="Primary">
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#experience">Experience</a>
-  <a href="#education">Education</a>
-  <a href="#contact">Contact</a>
+  <div class="nav-inner">
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#skills">Skills</a>
+    <a class="nav-link" href="#experience">Experience</a>
+    <a class="nav-link" href="#education">Education</a>
+    <a class="nav-link" href="#contact">Contact</a>
+  </div>
 </nav>
 
 <main id="main-content">
 <!-- Hero Section -->
-<section class="hero">
-  <h1>Sainath Choppara, FRM</h1>
-  <p>Data Engineer II @ Amazon Ads | AI/ML | Credit Risk & Analytics</p>
-  <a href="#contact" class="cta">Get in Touch</a>
+<section class="hero reveal">
+  <span class="eyebrow">Data Engineer | FRM</span>
+  <h1>Sainath Choppara builds data systems that connect risk intelligence with real business outcomes.</h1>
+  <p class="hero-subtitle">Data Engineer II at Amazon Ads with 10+ years across AI/ML, credit risk analytics, and high-impact data engineering.</p>
+  <div class="hero-metrics">
+    <span class="metric">10+ Years Experience</span>
+    <span class="metric">AI/ML Pipelines</span>
+    <span class="metric">Credit Risk Domain</span>
+    <span class="metric">FRM Certified</span>
+  </div>
+  <div class="cta-row">
+    <a href="#contact" class="cta primary">Get in Touch</a>
+    <a href="#experience" class="cta secondary">View Experience</a>
+  </div>
 </section>
 
 <!-- About -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>Financial Risk Manager (FRM) certified Data Engineer with 10+ years of experience in AI/ML, Data Engineering, Credit Risk, and Ads Analytics. Passionate about building scalable data solutions and solving real-world business problems with technology.</p>
+<section id="about" class="reveal delay-1">
+  <h2 class="section-title">About</h2>
+  <p class="section-intro">I design reliable, scalable data platforms that make advanced analytics practical for business teams. My work blends engineering rigor with risk-domain depth, helping organizations ship better decisions faster.</p>
 </section>
 
 <!-- Skills -->
-<section id="skills">
-  <h2>Top Skills</h2>
-  <ul>
-    <li>Data Governance</li>
-    <li>Reporting Requirements</li>
-    <li>Data Modeling</li>
-    <li>Credit Risk Analytics</li>
-    <li>AI / ML Data Engineering</li>
+<section id="skills" class="reveal delay-2">
+  <h2 class="section-title">Top Skills</h2>
+  <p class="section-intro">Hands-on capabilities across modern data architecture and quantitative risk analytics.</p>
+  <ul class="skills-grid">
+    <li class="skill-pill">Data Governance</li>
+    <li class="skill-pill">Reporting Requirements</li>
+    <li class="skill-pill">Data Modeling</li>
+    <li class="skill-pill">Credit Risk Analytics</li>
+    <li class="skill-pill">AI / ML Data Engineering</li>
   </ul>
 </section>
 
 <!-- Experience -->
-<section id="experience">
-  <h2>Professional Experience</h2>
-  <div class="cards">
-    <div class="card"><strong>Amazon – Data Engineer II (Ads)</strong><br>May 2022 – Present | Seattle, WA</div>
-    <div class="card"><strong>Chubb – Data Scientist</strong><br>Feb 2022 – May 2022 | New Jersey, USA</div>
-    <div class="card"><strong>VIP Structures – DS Analyst Intern</strong><br>Jun 2021 – Dec 2021 | Syracuse, NY</div>
-    <div class="card"><strong>Paychex – Research Data Analyst Intern</strong><br>Apr 2021 – May 2021 | Rochester, NY</div>
-    <div class="card"><strong>Union Bank of India – Assistant Manager, Data Science & Risk</strong><br>Mar 2017 – Dec 2019 | Mangaluru, India</div>
+<section id="experience" class="reveal delay-3">
+  <h2 class="section-title">Professional Experience</h2>
+  <div class="timeline">
+    <article class="timeline-item">
+      <div class="role">Amazon - Data Engineer II (Ads)</div>
+      <div class="meta">May 2022 - Present | Seattle, WA</div>
+    </article>
+    <article class="timeline-item">
+      <div class="role">Chubb - Data Scientist</div>
+      <div class="meta">Feb 2022 - May 2022 | New Jersey, USA</div>
+    </article>
+    <article class="timeline-item">
+      <div class="role">VIP Structures - DS Analyst Intern</div>
+      <div class="meta">Jun 2021 - Dec 2021 | Syracuse, NY</div>
+    </article>
+    <article class="timeline-item">
+      <div class="role">Paychex - Research Data Analyst Intern</div>
+      <div class="meta">Apr 2021 - May 2021 | Rochester, NY</div>
+    </article>
+    <article class="timeline-item">
+      <div class="role">Union Bank of India - Assistant Manager, Data Science & Risk</div>
+      <div class="meta">Mar 2017 - Dec 2019 | Mangaluru, India</div>
+    </article>
   </div>
 </section>
 
 <!-- Education -->
-<section id="education">
-  <h2>Education & Certifications</h2>
-  <div class="cards">
-    <div class="card">MS, Applied Data Science – Syracuse University (2020–2021)</div>
-    <div class="card">BTech, Computer Science – JNTUH</div>
-    <div class="card">Financial Risk Manager (FRM)</div>
+<section id="education" class="reveal">
+  <h2 class="section-title">Education & Certifications</h2>
+  <div class="edu-grid">
+    <div class="edu-card">MS, Applied Data Science - Syracuse University (2020-2021)</div>
+    <div class="edu-card">BTech, Computer Science - JNTUH</div>
+    <div class="edu-card">Financial Risk Manager (FRM)</div>
   </div>
 </section>
 
 <!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:sainathchoppara28@gmail.com">sainathchoppara28@gmail.com</a></p>
-  <div class="contact-links">
-    <a href="https://www.linkedin.com/in/sainath-choppara/" class="cta" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href="https://github.com/sainathchoppara" class="cta" target="_blank" rel="noopener noreferrer">GitHub</a>
+<section id="contact" class="reveal">
+  <div class="contact-panel">
+    <h2 class="section-title">Contact</h2>
+    <p>Email: <a href="mailto:sainathchoppara28@gmail.com">sainathchoppara28@gmail.com</a></p>
+    <div class="contact-actions">
+      <a href="https://www.linkedin.com/in/sainath-choppara/" class="cta secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/sainathchoppara" class="cta secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
   </div>
 </section>
 </main>
@@ -169,6 +508,6 @@
 <footer>
   &copy; 2026 Sainath Choppara. All Rights Reserved.
 </footer>
-
+</div>
 </body>
 </html>
