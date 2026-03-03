@@ -165,17 +165,32 @@
   }
 
   h1 {
-    font-size: clamp(2rem, 4.6vw, 4rem);
-    max-width: 16ch;
-    margin-bottom: 14px;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    max-width: 22ch;
+    margin-bottom: 12px;
     color: var(--accent-dark);
+    line-height: 1.08;
+  }
+
+  .hero-name {
+    display: block;
+  }
+
+  .hero-tagline {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(1rem, 1.7vw, 1.28rem);
+    font-weight: 600;
+    line-height: 1.45;
+    color: #2d5d68;
   }
 
   .hero-subtitle {
     color: var(--muted);
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(0.98rem, 1.4vw, 1.08rem);
     max-width: 62ch;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .hero-metrics {
@@ -421,7 +436,10 @@
 <!-- Hero Section -->
 <section class="hero reveal">
   <span class="eyebrow">Data Engineer | FRM</span>
-  <h1>Sainath Choppara builds data systems that connect risk intelligence with real business outcomes.</h1>
+  <h1>
+    <span class="hero-name">Sainath Choppara, FRM</span>
+    <span class="hero-tagline">Data systems that connect risk intelligence with real business outcomes.</span>
+  </h1>
   <p class="hero-subtitle">Data Engineer II at Amazon Ads with 10+ years across AI/ML, credit risk analytics, and high-impact data engineering.</p>
   <div class="hero-metrics">
     <span class="metric">10+ Years Experience</span>
