@@ -3,29 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sainath Choppara is a Financial Risk Manager (FRM) certified Data Engineer with 10+ years of experience in AI/ML, data engineering, credit risk, and ads analytics.">
+<meta name="author" content="Sainath Choppara">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0071e3">
+<link rel="canonical" href="https://www.sainathchoppara.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sainath Choppara | FRM">
+<meta property="og:description" content="Data Engineer II @ Amazon Ads | AI/ML | Credit Risk & Analytics">
+<meta property="og:url" content="https://www.sainathchoppara.com/">
+<meta property="og:site_name" content="Sainath Choppara">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sainath Choppara | FRM">
+<meta name="twitter:description" content="Data Engineer II @ Amazon Ads | AI/ML | Credit Risk & Analytics">
 <title>Sainath Choppara | FRM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   /* Reset and basic styling */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #111; background: #f8f8f8; scroll-behavior: smooth; }
   a { text-decoration: none; color: inherit; }
+  a:focus-visible { outline: 3px solid #0071e3; outline-offset: 3px; border-radius: 6px; }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: #111;
+    color: #fff;
+    padding: 10px 14px;
+    z-index: 2000;
+    border-radius: 0 0 8px 0;
+  }
+  .skip-link:focus {
+    left: 0;
+  }
   
   /* Navigation */
-  nav { position: sticky; top: 0; background: #fff; display: flex; justify-content: center; gap: 40px; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; }
+  nav { position: sticky; top: 0; background: #fff; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 40px; padding: 20px 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; }
   nav a { font-weight: 600; color: #111; transition: color 0.3s; }
   nav a:hover { color: #0071e3; }
+
+  .cta { display: inline-block; padding: 12px 24px; background: #0071e3; color: #fff; border-radius: 8px; font-weight: 600; transition: background 0.3s; }
+  .cta:hover { background: #005bb5; }
 
   /* Hero Section */
   .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: linear-gradient(135deg,#ffffff,#e6e6e6); }
   .hero h1 { font-size: 3rem; margin-bottom: 15px; }
   .hero p { font-size: 1.2rem; margin-bottom: 20px; color: #555; }
-  .hero .cta { padding: 12px 24px; background: #0071e3; color: #fff; border-radius: 8px; font-weight: 600; transition: background 0.3s; }
-  .hero .cta:hover { background: #005bb5; }
 
   /* Sections */
   section { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
   section h2 { font-size: 2rem; margin-bottom: 25px; border-bottom: 2px solid #ddd; padding-bottom: 8px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 8px; }
 
   /* Cards for Experience & Education */
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
@@ -34,15 +67,38 @@
 
   /* Footer */
   footer { text-align: center; padding: 30px 20px; color: #777; font-size: 0.9rem; border-top: 1px solid #eee; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
 
   /* Responsive typography */
   @media(max-width:768px){ .hero h1{ font-size:2.2rem; } .hero p{ font-size:1rem; } }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sainath Choppara",
+  "url": "https://www.sainathchoppara.com/",
+  "jobTitle": "Data Engineer II",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Amazon Ads"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/sainath-choppara/",
+    "https://github.com/sainathchoppara"
+  ],
+  "email": "mailto:sainathchoppara28@gmail.com"
+}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- Navigation -->
-<nav>
+<nav aria-label="Primary">
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
   <a href="#experience">Experience</a>
@@ -50,6 +106,7 @@
   <a href="#contact">Contact</a>
 </nav>
 
+<main id="main-content">
 <!-- Hero Section -->
 <section class="hero">
   <h1>Sainath Choppara, FRM</h1>
@@ -101,9 +158,12 @@
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: <a href="mailto:sainathchoppara28@gmail.com">sainathchoppara28@gmail.com</a></p>
-  <a href="https://www.linkedin.com/in/sainath-choppara/" class="cta">LinkedIn</a>
-  <a href="https://github.com/sainathchoppara" class="cta">GitHub</a>
+  <div class="contact-links">
+    <a href="https://www.linkedin.com/in/sainath-choppara/" class="cta" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/sainathchoppara" class="cta" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
 </section>
+</main>
 
 <!-- Footer -->
 <footer>
